@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Almacen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Almacen</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10"></ion-col>
+        <ion-col size="2">
+          <ion-button expand="block" zise="large" color="light" (click)="filterA()"><ion-icon name="funnel-outline"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"><b>Insumo</b></ion-col>
+        <ion-col size="3"><b>No. Serie</b></ion-col>
+        <ion-col size="3"><b>Descripcion</b></ion-col>
+        <ion-col size="3"><b>Catidad</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">Hilo</ion-col>
+        <ion-col size="3">Fn-2487</ion-col>
+        <ion-col size="3">Hilo negro</ion-col>
+        <ion-col size="3">3 conos</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">Cierre</ion-col>
+        <ion-col size="3">FLDSMDFR</ion-col>
+        <ion-col size="3">Cierre</ion-col>
+        <ion-col size="3">1 caja</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  
+  <ion-item *ngIf="EDIT">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-button expand="block" color="success">Añadir nuevo</ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" color="warning">Modificar inventario</ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" color="primary">Guardar cambios</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+</ion-content>
