@@ -8,7 +8,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab4Page {
 
-  EDIT = false;
+  EDIT = true;
 
   constructor(private alertController: AlertController) {}
 

@@ -1,0 +1,226 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Editor de </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Editor de 
+        <ion-title size="large" *ngIf="PT">Produccion</ion-title>
+        <ion-title size="large" *ngIf="ET">Especificaciones</ion-title>
+        <ion-title size="large" *ngIf="AT">Almacen</ion-title>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngIf="P">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="showP1()">Actualizar datos</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="showP2()">Agregar corte</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="P1">
+    <ion-grid>
+      <ion-row>
+        <h4><b>Actualizar produccion</b></h4>
+      </ion-row>
+      <ion-row>
+        <ion-label>Ingrese No. de corte</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejemplo: 1724"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label>Ingrese la cantidad de produccion</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input type="number" placeholder="Ejemplo: 300"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="hideP1()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="P2">
+    <ion-grid>
+      <ion-row>
+        <h4><b>Agregar produccion</b></h4>
+      </ion-row>
+      <ion-row>
+        <ion-label>Ingrese linea de trabajo</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-select placeholder="Seleccione linea">
+          <ion-select-option value="1">Linea 1</ion-select-option>
+          <ion-select-option value="2">Linea 2</ion-select-option>
+          <ion-select-option value="3">Linea 3</ion-select-option>
+          <ion-select-option value="4">Linea 4</ion-select-option>
+          <ion-select-option value="5">Linea 5</ion-select-option>
+          <ion-select-option value="6">Linea 6</ion-select-option>
+        </ion-select>
+      </ion-row>
+      <ion-row>
+        <ion-label>Ingrese No. de corte</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejemplo: 1724"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="hideP2()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="E">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="showE1()">Acualizar datos</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="showE2()">Subir ficha tecnica</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="E1">
+    <ion-grid>
+      <ion-row>
+        <h4><b>Actualizar especificaciones</b></h4>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="hideE1()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="E2">
+    <ion-grid>
+      <ion-row>
+        <h4><b>Subir ficha tecnica</b></h4>
+      </ion-row>
+      <ion-row>
+        <ion-label>Ingresa el No. de corte</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejemplo: 1724"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label>Seleccione archivo</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input type="file"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-img src="https://trendrobotics.es/wp-content/uploads/2019/01/ficha-tecnica-carbot.jpg"></ion-img>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="hideE2()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="A">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="showA1()">Agregar</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="showA2()">Modificar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="A1">
+    <ion-grid>
+      <ion-row>
+        <h4><b>Agrega a almacen</b></h4>
+      </ion-row>
+      <ion-row>
+        <ion-label>Nombre</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejemplo: Hilo"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label>No. de serie</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="FS688615933"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label>Descripcion</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-textarea rows="3" placeholder="Ingrese una pequeña descripcion"></ion-textarea>
+      </ion-row>
+      <ion-row>
+        <ion-label>Cantidad</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejamplo: 4 cajas" ></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="hideA1()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="A2">
+    <ion-grid>
+      <ion-row>
+        <h4><b>Modificar almacen</b></h4>
+      </ion-row>
+      <ion-row>
+        <ion-label>Nombre</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejemplo: Hilo"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label>No. de serie</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="FS688615933"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-label>Descripcion</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-textarea rows="3" placeholder="Ingrese una pequeña descripcion"></ion-textarea>
+      </ion-row>
+      <ion-row>
+        <ion-label>Cantidad</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input placeholder="Ejamplo: 4 cajas" ></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="hideA2()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-button (click)="p()">P</ion-button>
+  <ion-button (click)="e()">E</ion-button>
+  <ion-button (click)="a()">A</ion-button>
+</ion-content>

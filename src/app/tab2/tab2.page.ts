@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class Tab2Page {
 
   SHOW = false;
-  EDIT = false;
+  EDIT = true;
 
   constructor() {}
 
