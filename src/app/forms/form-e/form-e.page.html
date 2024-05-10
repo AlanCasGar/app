@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Editor de Especificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Editor de Especificaciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngIf="E">
+    <ion-grid>
+      <ion-row><ion-col><ion-label class="icon"><ion-icon name="clipboard-outline" class="icon"></ion-icon></ion-label></ion-col></ion-row>
+      <ion-row><ion-col><ion-label class="tittle">Especificaciones</ion-label></ion-col></ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="warning" (click)="showE1()">Actualizar datos</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success" (click)="showE2()">Subir ficha tecnica</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8"><ion-button expand="block" color="danger" href="../tabs/tab2">Volver</ion-button></ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="E1">
+    <ion-grid>
+      <ion-row><h4><b>Actualizar especificaciones</b></h4></ion-row>
+      <ion-row><ion-label>Ingresa el No. de corte</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: 1724"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa el Modelo</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: 83310500"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa la Marca</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: Weekend"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa la Descripcion</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: Pantalon vivo"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa el Estilo</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: Caballero"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa el Color</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: Marino"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa el Proceso</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: Suavizado"></ion-input></ion-row>
+      <ion-row><ion-label>Ingresa las Observaciones</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ingrese una observacion"></ion-input></ion-row>
+      <ion-row><ion-label>Ingrese el Estatus</ion-label></ion-row>
+      <ion-row>
+        <ion-select placeholder="Seleccione el estatus">
+          <ion-select-option>En proceso</ion-select-option>
+          <ion-select-option>Terminado</ion-select-option>
+        </ion-select>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="salir()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="E2">
+    <ion-grid>
+      <ion-row><h4><b>Subir ficha tecnica</b></h4></ion-row>
+      <ion-row><ion-label>Ingresa el No. de corte</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: 1724"></ion-input></ion-row>
+      <ion-row><ion-label>Seleccione archivo</ion-label></ion-row>
+      <ion-row><ion-input type="file"></ion-input></ion-row>
+      <ion-row><ion-img src="https://trendrobotics.es/wp-content/uploads/2019/01/ficha-tecnica-carbot.jpg"></ion-img></ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="salir()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+</ion-content>

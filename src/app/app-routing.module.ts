@@ -7,8 +7,16 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'form',
-    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
+    path: 'form-p',
+    loadChildren: () => import('./forms/form-p/form-p.module').then( m => m.FormPPageModule)
+  },
+  {
+    path: 'form-a',
+    loadChildren: () => import('./forms/form-a/form-a.module').then( m => m.FormAPageModule)
+  },
+  {
+    path: 'form-e',
+    loadChildren: () => import('./forms/form-e/form-e.module').then( m => m.FormEPageModule)
   }
 
 ];

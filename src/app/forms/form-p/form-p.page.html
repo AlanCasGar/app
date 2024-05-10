@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Editor de Produccion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Editor de Produccion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngIf="P">
+    <ion-grid>
+      <ion-row><ion-col><ion-label class="icon"><ion-icon name="document-text-outline" class="icon"></ion-icon></ion-label></ion-col></ion-row>
+      <ion-row><ion-col><ion-label class="tittle">Produccion</ion-label></ion-col></ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="warning" (click)="showP1()">Actualizar produccion</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success" (click)="showP2()">Agregar corte</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8"><ion-button expand="block" color="danger" href="../tabs/tab1">Volver</ion-button></ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="P1">
+    <ion-grid>
+      <ion-row><h4><b>Actualizar produccion</b></h4></ion-row>
+      <ion-row><ion-label>Ingrese No. de corte</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: 1724"></ion-input></ion-row>
+      <ion-row><ion-label>Ingrese la cantidad de produccion</ion-label></ion-row>
+      <ion-row><ion-input type="number" placeholder="Ejemplo: 300"></ion-input></ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="salir()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="P2">
+    <ion-grid>
+      <ion-row><h4><b>Agregar produccion</b></h4></ion-row>
+      <ion-row><ion-label>Ingrese linea de trabajo</ion-label></ion-row>
+      <ion-row>
+        <ion-select placeholder="Seleccione linea">
+          <ion-select-option value="1">Linea 1</ion-select-option>
+          <ion-select-option value="2">Linea 2</ion-select-option>
+          <ion-select-option value="3">Linea 3</ion-select-option>
+          <ion-select-option value="4">Linea 4</ion-select-option>
+          <ion-select-option value="5">Linea 5</ion-select-option>
+          <ion-select-option value="6">Linea 6</ion-select-option>
+        </ion-select>
+      </ion-row>
+      <ion-row><ion-label>Ingrese No. de corte</ion-label></ion-row>
+      <ion-row><ion-input placeholder="Ejemplo: 1724"></ion-input></ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button expand="block" color="danger" (click)="salir()">Volver</ion-button></ion-col>
+        <ion-col size="6"><ion-button expand="block" color="success">Guardar cambios</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+</ion-content>

@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormPage } from './form.page';
+import { FormEPage } from './form-e.page';
 
-describe('FormPage', () => {
-  let component: FormPage;
-  let fixture: ComponentFixture<FormPage>;
+describe('FormEPage', () => {
+  let component: FormEPage;
+  let fixture: ComponentFixture<FormEPage>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormPage);
+    fixture = TestBed.createComponent(FormEPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
